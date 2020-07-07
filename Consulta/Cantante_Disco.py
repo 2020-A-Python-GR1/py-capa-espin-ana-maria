@@ -2,13 +2,16 @@ def crear_cantante():
     
     print("\n  INGRESE LA INFORMACION DEL CANTANTE\n")
     codigo = input("  Codigo: ")
-    nombre = input("  Nombre: ")
-    asignatura = input("  Asignatura que dicta: ")
+    nombre = input("  Nombre Cantante: ")
+    edad = input("Edad Cantante: ")
+    genero = input("  Genero musical: ")
+    pais = input("  Pais nacimiento: ")
+
         
     try:
         path = "./cantante.txt"
         archivo_escritura_abierto = open(path,mode="a") 
-        archivo_escritura_abierto.writelines([f"{codigo},{nombre},{asignatura}\n"])
+        archivo_escritura_abierto.writelines([f"{codigo},{nombre},{edad},{genero},{pais}\n"])
         archivo_escritura_abierto.close()
         print("\n INFORMACION INGRESADA CORRECTAMENTE \n")
     except Exception as error:
@@ -18,14 +21,15 @@ def crear_disco():
     
     print("\n  INGRESE LA INFORMACION DEL DISCO\n")
     codigo = input("  Codigo: ")
-    nombre = input("  Nombre: ")
-    apellido = input("  Apellido: ")
-    curso = input("  Curso: ")
+    nombre = input("  Nombre Disco: ")
+    formato = input("  Tipo Formato: ")
+    anio = input("  Anio: ")
+    precio = input("  Precio: ")
         
     try:
         path = "./disco.txt"
         archivo_escritura_abierto = open(path,mode="a") 
-        archivo_escritura_abierto.writelines([f"{codigo},{nombre},{apellido},{curso}\n"])
+        archivo_escritura_abierto.writelines([f"{codigo},{nombre},{formato},{anio},{precio}\n"])
         archivo_escritura_abierto.close()
         print("\n INFORMACION INGRESADA CORRECTAMENTE \n")
     except Exception as error:
@@ -68,9 +72,11 @@ def modificar_cantante():
         archivo_abierto.seek(0)
         for linea in lineas:
             if codigo in linea:
-                nombre = input("  INGRESE EL NOMBRE DEL CANTANTE: ")
-                asignatura = input("  INGRESE LA ASIGNATURA: ")
-                modelo_modificado = f"{codigo},{nombre},{asignatura}\n"
+                nombre = input("  Ingrese nombre del cantante: ")
+                edad = input("  Ingrese Edad Cantante: ")
+                genero = input("  Ingrese Genero musical: ")
+                pais = input("  Ingrese Pais nacimiento: ")
+                modelo_modificado = f"{codigo},{nombre},{edad},{genero},{pais}\n"
                 archivo_abierto.write(modelo_modificado)
                 archivo_abierto.truncate()
                 print(f"\n  CANTANTE {codigo} HA SIDO MODIFICADO \n")
@@ -91,10 +97,11 @@ def modificar_disco():
         archivo_abierto.seek(0)
         for linea in lineas:
             if codigo in linea:
-                nombre = input("  Nombre: ")
-                apellido = input("  Apellido: ")
-                curso = input("  Curso: ")
-                modelo_modificado = f"{codigo},{nombre},{apellido},{curso}\n"
+                nombre = input("  Nombre del disco: ")
+                formato = input("  Ingrese formato: ")
+                anio = input("  Ingrese Anio: ")
+                precio = input("  Ingrese precio: ")
+                modelo_modificado = f"{codigo},{nombre},{formato},{anio},{precio}\n"
                 archivo_abierto.write(modelo_modificado)
                 archivo_abierto.truncate()
                 print(f"\n  DISCO {codigo} HA SIDO MODIFICADO \n")
@@ -144,8 +151,7 @@ def eliminar_disco():
 def Star_Aplication():
 
         print("*********************************************")
-        print("ESCUELA POLITECNICA NACIONAL")
-        print("SISTEMA DE ASIGNACION CANTANTE-DISCO")
+        print("DEBER CANTANTE-DISCO")
         print("SELECCIONE EL NUMERO DE LA OPCION A REALIZAR")
         print("1. INGRESE UN CANTANTE")
         print("2. INGRESE UN DISCO")
