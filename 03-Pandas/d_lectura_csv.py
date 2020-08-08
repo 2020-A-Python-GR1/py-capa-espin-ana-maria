@@ -26,9 +26,9 @@ df2 = pd.read_csv(
 #para q otra columna se fije como indice
 df3 = pd.read_csv(
     path,
-    nrows=10,
     usecols = columnas,
     index_col = 'id')
+
 
 #para guardar los datos generados
 path_guardado = "./data/artwork_data.pickle"
