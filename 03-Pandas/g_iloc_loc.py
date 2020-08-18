@@ -50,6 +50,61 @@ tercero = df.iloc[df.index == 1035]
 tercero = df.iloc [0:10, 0:4]# filtrado indices
 # por rango de indices 0:4
 
+#############
+# Crear diccionario
+datos = {
+    "nota 1":{
+        "Pepito": 7,
+        "Juanito": 8,
+        "Maria": 9
+        },
+    "disciplina": {
+        "Pepito": 4,
+        "Juanito": 9,
+        "Maria": 2
+        },
+    }
+
+notas = pd.DataFrame(datos)
+
+# queremos ver si pasa el semestre
+
+condicion_nota = notas["nota 1"]>7
+#condicion_nota_dos = notas["nota 2"]>7
+condicion_disc = notas["disciplina"]>7
+
+mayores_siete = notas.loc[condicion_nota, ["nota 1"]]
+# sepuede poner varios arreglos de condicion True oFalse
+# al ejecutar valida condicionse
+
+pasaron = notas.loc[condicion_nota][condicion_disc]
+
+#para cambiaruna nota
+notas.loc["Maria", "disciplina"] = 7
+# para cambiar a todos la nota
+
+notas.loc[:,"disciplina"] = 7
+
+## Ejercicio: Promedio delas 3notas (no1 + n02 + disc)/3
+###hacer
+## cuando se quiera filtrardatos no usardirecto el 
+#data Frame USAR ILOC o LOC
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
