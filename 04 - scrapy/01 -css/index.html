@@ -45,10 +45,16 @@
        .STYLE > id > CLASE > ETIQUETA
        ultimo definido > anterior definido
         */
-        /* Etiqueta dentro de etiqueta*/
+        /* Etiqueta dentro de otra etiqueta*/
 
         li > p{
             background-color: violet;
+        }
+        li > p.epn.uno{
+            background-color: green;
+        }
+        li > p.epn{
+            background-color: red;
         }
         body >ul > li >p{
             background-color: pink;
@@ -67,9 +73,11 @@
         >Parrafo dos</p>
     <p class = "fondo-rojo">Parrafo tres</p>
     <ul>
+        <li><p class="epn"></p>Cero</li>
         <li>Uno</li>
         <li><p>Dos</p></li>
         <li>Tres</li>
+        <li><p class="epn"></p>Cuatro</li>
     </ul>
     <li><p>Fuera de UL</p></li>
 </body>

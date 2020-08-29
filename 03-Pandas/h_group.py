@@ -78,7 +78,9 @@ def llenar_valores_vacios (series, tipo):
             ## podemos llenar con mas repedito
             #definir con q quiere llenar los vacios
         if(tipo == 'mas repetido'): 
-            pass
+           valor_repetido  =  series.value_counts().idxmax()
+            serie_valores_llenos  =  series.fillna(valor_repetido)
+            return  serie_valores_llenos
 #definir series
 
 
