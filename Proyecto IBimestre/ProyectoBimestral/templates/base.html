@@ -1,0 +1,31 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+          <!--requirement meta tag-->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!--jquery-->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+       <!--custom css-->
+       <link rel='stylesheet' type ='text/css' href={% static 'style.css' %}>
+      <!--semantic uio-->
+      <link rel = "stylesheet" type ='text/css' href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.14/semantic.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui.js/2.4.1/semantic.min.js"></script>
+     
+
+        <title> Proyecto Bimestral{% block Title%} {% endblock%}</title>
+    </head>
+    <body>
+      {% include 'navbar.html' %}
+      <div class ='ui container'> 
+        {% block content%} 
+        
+        {% endblock%}
+      </div>
+      <script src={% static 'main.js' %}> </script>
+    </body>
+
+</html>
+
+   
